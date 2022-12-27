@@ -22,7 +22,7 @@ const template = { value1: null, value2: null, operator: null };
 const handler = {
   get: (target, key) => {
     if (key === "value1") {
-      return input1.value === "" ? 0 : parseInt(input.value);
+      return input1.value === "" ? 0 : parseInt(input1.value);
     }
 
     if (key === "value2") {
@@ -41,15 +41,16 @@ function calcuteResult() {
       total = proxy.value1 + proxy.value2;
       break;
     case "*":
-      total = proxy.valor1 * proxy.value2;
+      total = proxy.value1 * proxy.value2;
       break;
     case "-":
-      total = proxy.valor1 - proxy.value2;
+      total = proxy.value1 - proxy.value2;
       break;
     case "/":
-      total = proxy.valor1 / proxy.value2;
+      total = proxy.value1 / proxy.value2;
       break;
   }
+
   result.innerText = total;
 }
 
